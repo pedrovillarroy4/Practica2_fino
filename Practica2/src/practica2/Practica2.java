@@ -1,11 +1,8 @@
 package Pracitca2_;
 
-import java.util.Scanner;
-
 public class Pracitca2_ {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         double res = 0;
         String operacion;
         boolean comprobar = false;
@@ -13,33 +10,14 @@ public class Pracitca2_ {
         do {
 
             String numero1;
-            do {
-                System.out.println("\n*PROGRAMA-CALCULADORA*\nIntrodueix el primer numero a operar.");
-                numero1 = sc.nextLine();
-            } while (!numero1.matches("[+-]?[\\d]*[.]?[\\d]+"));
+            numero1 = metodes.primerNumero();
             //double nume1 = Double.parseDouble(numero1); Innecesario, ya que lo haces a continuación
             double n1 = new Double(numero1);
 
-            do {
-                System.out.println("\nEscull la operació que vols fer (Indica el signe):");
-                System.out.println("+ = sumar\n- = restar\n"
-                        + "x = multiplicar\n/ = dividir\n* = elevar primer num al segon num."
-                        + "\n% = residu");
-                operacion = sc.nextLine();
-                if (operacion.equals("+") || operacion.equals("-") || operacion.equals("x")
-                        || operacion.equals("X") || operacion.equals("/") || operacion.equals("%")
-                        || operacion.equals("*")) {
-                    comprobar = true;
-                } else {
-                    comprobar = false;
-                }
-            } while (comprobar != true);
+            operacion = metodes.escollirOpcio();
 
             String numero2;
-            do {
-                System.out.println("\nIntrodueix el segon numero a operar.");
-                numero2 = sc.nextLine();
-            } while (!numero2.matches("[+-]?[\\d]*[.]?[\\d]+"));
+            numero2 = metodes.segonNumero();
             //double nume2 = Double.parseDouble(numero2); Innecesario, ya que lo haces a continuación
             double n2 = new Double(numero2);
 
@@ -58,11 +36,7 @@ public class Pracitca2_ {
                         break;
                     case "/":
                         while (n2 == 0) {
-                            do {
-                                System.err.println("Al denominador hi ha un zero\n"
-                                        + "per a  evitar errors coloca un altre valor.");
-                                numero2 = sc.nextLine();
-                            } while (!numero2.matches("[+-]?[\\d]*[.]?[\\d]+"));
+                            numero2 = metodes.denominadorZero();
                             //nume2 = Double.parseDouble(numero2); Innecesario, ya que lo haces a continuación
                             n2 = new Double(numero2);
                         }
@@ -73,11 +47,7 @@ public class Pracitca2_ {
                         break;
                     case "%":
                         while (n2 == 0) {
-                            do {
-                                System.err.println(" Al denominador hi ha un zero \n"
-                                        + "per a  evitar errors coloca un altre valor.");
-                                numero2 = sc.nextLine();
-                            } while (!numero2.matches("[+-]?[\\d]*[.]?[\\d]+"));
+                            numero2 = metodes.denominadorZero();
                             //nume2 = Double.parseDouble(numero2); Innecesario, ya que lo haces a continuación
                             n2 = new Double(numero2);
                         }
@@ -88,22 +58,10 @@ public class Pracitca2_ {
 
             System.out.println("\n*RESULTAT FINAL DE LA OPERACIÓ*\n(" + numero1 + ") " + operacion + " (" + numero2 + ")" + " = " + res);
             System.out.println("\nVols continuar operant? [s/n]");
-            do {
-                comprobar = true;
-                operacion = sc.nextLine();
-
-                switch (operacion) {
-                    case "s":
-                    case "S":
-                    case "n":
-                    case "N":
-                        break;
-                    default:
-                        System.err.println("\nError, posa un valor vàlid.\n");
-                        comprobar = false;
-                }
-            } while (comprobar != true);
+            
+            operacion = metodes.continuarOperant();
+            
         } while (operacion.equals("s") || operacion.equals("S"));
         System.out.println("\n*FINALITZANT PROGRAMA*");
-    } 
+    }
 }
