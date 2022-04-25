@@ -1,22 +1,9 @@
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package practica2;
+package Pracitca2_;
 
 import java.util.Scanner;
 
-/**
- *
- * @author esther
- */
-public class Practica2 {
+public class Pracitca2_ {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         double res = 0;
@@ -30,7 +17,7 @@ public class Practica2 {
                 System.out.println("\n*PROGRAMA-CALCULADORA*\nIntrodueix el primer numero a operar.");
                 numero1 = sc.nextLine();
             } while (!numero1.matches("[+-]?[\\d]*[.]?[\\d]+"));
-            double nume1 = Double.parseDouble(numero1);
+            //double nume1 = Double.parseDouble(numero1); Innecesario, ya que lo haces a continuación
             double n1 = new Double(numero1);
 
             do {
@@ -53,14 +40,14 @@ public class Practica2 {
                 System.out.println("\nIntrodueix el segon numero a operar.");
                 numero2 = sc.nextLine();
             } while (!numero2.matches("[+-]?[\\d]*[.]?[\\d]+"));
-            double nume2 = Double.parseDouble(numero2);
+            //double nume2 = Double.parseDouble(numero2); Innecesario, ya que lo haces a continuación
             double n2 = new Double(numero2);
 
             do {
                 comprobar = true;
                 switch (operacion) {
                     case "+":
-                        res = n2 + n2;
+                        res = n1 + n2; //Cambiar un n2 por un n1
                         break;
                     case "-":
                         res = n1 - n2;
@@ -76,22 +63,22 @@ public class Practica2 {
                                         + "per a  evitar errors coloca un altre valor.");
                                 numero2 = sc.nextLine();
                             } while (!numero2.matches("[+-]?[\\d]*[.]?[\\d]+"));
-                            nume2 = Double.parseDouble(numero2);
+                            //nume2 = Double.parseDouble(numero2); Innecesario, ya que lo haces a continuación
                             n2 = new Double(numero2);
                         }
                         res = n1 / n2;
                         break;
                     case "*":
-                        res = Math.pow(n1, n1);
+                        res = Math.pow(n1, n2); //Cambiar el segundo n1 a n2
                         break;
                     case "%":
                         while (n2 == 0) {
                             do {
-                                System.err.println("Al denominador hi ha un zero\n"
+                                System.err.println(" Al denominador hi ha un zero \n"
                                         + "per a  evitar errors coloca un altre valor.");
                                 numero2 = sc.nextLine();
                             } while (!numero2.matches("[+-]?[\\d]*[.]?[\\d]+"));
-                            nume2 = Double.parseDouble(numero2);
+                            //nume2 = Double.parseDouble(numero2); Innecesario, ya que lo haces a continuación
                             n2 = new Double(numero2);
                         }
                         res = n1 % n2;
