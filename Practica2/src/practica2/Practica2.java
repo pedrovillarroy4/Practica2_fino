@@ -105,5 +105,5 @@ public class Pracitca2_ {
             } while (comprobar != true);
         } while (operacion.equals("s") || operacion.equals("S"));
         System.out.println("\n*FINALITZANT PROGRAMA*");
-    }
+    } 
 }
