@@ -17,7 +17,7 @@ public class Pracitca2_ {
                 System.out.println("\n Introdueix el primer numero. ");
                 numero1 = sc.nextLine();
             } while (!numero1.matches("[+-]?[\\d]*[.]?[\\d]+"));
-            double nume1 = Double.parseDouble(numero1);
+            //double nume1 = Double.parseDouble(numero1); Innecesario, ya que lo haces a continuación
             double n1 = new Double(numero1);
 
             do {
@@ -63,7 +63,7 @@ public class Pracitca2_ {
                                         + "per a  evitar errors coloca un altre valor.");
                                 numero2 = sc.nextLine(); 
                             } while (!numero2.matches("[+-]?[\\d]*[.]?[\\d]+"));
-                            //nume2 = Double.parseDouble(numero2); //No sirve porque pasas el string a double 
+                            //nume2 = Double.parseDouble(numero2); Innecesario, ya que lo haces a continuación
                             n2 = new Double(numero2);
                         }
                         res = n1 / n2;
@@ -78,7 +78,7 @@ public class Pracitca2_ {
                                         + "per a  evitar errors coloca un altre valor.");
                                 numero2 = sc.nextLine();
                             } while (!numero2.matches("[+-]?[\\d]*[.]?[\\d]+"));
-                            //nume2 = Double.parseDouble(numero2); //No sirve porque pasas el string a double 
+                            //nume2 = Double.parseDouble(numero2); Innecesario, ya que lo haces a continuación
                             n2 = new Double(numero2);
                         }
                         res = n1 % n2;
