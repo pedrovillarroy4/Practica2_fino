@@ -40,7 +40,7 @@ public class Pracitca2_ {
                 System.out.println("\n Introdueix el segon numero.");
                 numero2 = sc.nextLine();
             } while (!numero2.matches("[+-]?[\\d]*[.]?[\\d]+"));
-            double nume2 = Double.parseDouble(numero2);
+            //double nume2 = Double.parseDouble(numero2); Innecesario, ya que lo haces a continuación
             double n2 = new Double(numero2);
 
             do {
