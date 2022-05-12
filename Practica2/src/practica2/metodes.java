@@ -1,9 +1,9 @@
-package Pracitca2_;
+package practica2;
 
 import java.util.Scanner;
 
-public class Pracitca2_ {
-
+public class metodes {
+    
     static String primerNumero() {
         Scanner sc = new Scanner(System.in);
 

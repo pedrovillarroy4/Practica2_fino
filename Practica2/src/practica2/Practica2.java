@@ -1,6 +1,6 @@
-package Pracitca2_;
+package practica2;
 
-public class Pracitca2_ {
+public class Practica2 {
 
     public static void main(String[] args) {
         double res = 0;
